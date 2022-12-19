@@ -6,15 +6,15 @@ SUBDIRS_LEVEL_2_HEADERS := $(foreach dir, $(SUBDIRS_LEVEL_1), $(wildcard $(dir)*
 
 CCFLAGS += $(addprefix -I , $(SUBDIRS_LEVEL_2_HEADERS))
 
-OBJECTS_DYNAMIC := ./LibDynamic/src/LibDynamic_01.o ./LibDynamic/src/LibDynamic_02.o
+OBJECTS_DYNAMIC := ./LibDynamic/src/LibDynamic_01.o ./LibDynamic/src/LibDynamic_02.o ./LibDynamic/src/example.o
 LIBRARY_DYNAMIC := ./LibDynamic/src/LibDynamic.so
 
 OBJECTS_STATIC := ./LibStatic/src/LibStatic_01.o ./LibStatic/src/LibStatic_02.o
 LIBRARY_STATIC := ./LibStatic/src/LibStatic.a
 
-OBJECTS_MAIN := ./Main/src/test.o ./Main/src/Main.o
+OBJECTS_MAIN := ./Main/src/test.o ./Main/src/Main.o 
 
-OUTPUT_FINAL := ./Output
+OUTPUT_FINAL := ./final.out
 
 .PHONY : all clean distclean
 
